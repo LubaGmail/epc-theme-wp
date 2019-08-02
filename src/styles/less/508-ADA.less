@@ -1,0 +1,33 @@
+//Implementation for 508/ADA compliance
+
+//Use bootstrap's 'sr-only' class to hide labels for all input fields.
+
+//Hides skip to main content.
+.cms-access a {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    &:focus {
+        position: unset;
+        color: @cms-white  !important;
+        font-size: 20px;
+        display: block;
+        z-index: 100000000;
+        background: #0071bc !important;
+        width: 100%;
+        padding: 5px;
+        height: 40px;
+    }
+}
+
+.cms-skip-focused {}
+
+//Hides underlining, question mark, etc. for abbr tag
+abbr[title] {
+    .no-border;
+    cursor: inherit;
+    text-decoration: none;
+}

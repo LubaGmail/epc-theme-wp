@@ -1,0 +1,595 @@
+@import "variables";
+
+//Buttons - mixins below serve as builders. 
+.cms-base-button() {
+    font-size: 18px;
+    padding: 12px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    font-family: @cms-font-sourcesanspro;
+    .border-radius (@border-radius: 3px);
+}
+
+.cms-green-button() {
+    .cms-base-button;
+    color: @cms-white;
+    background-color: @cms-login-button;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: @cms-login-button-hover;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+
+    &:disabled {
+        background-color: @cms-disabled-button;
+    }
+}
+
+//Back buttons
+.cms-green-back() {
+    .cms-base-button;
+    background-color: @cms-white;
+    color: @cms-login-button;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: @cms-login-button;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+
+    &:disabled {
+        background-color: @cms-disabled-button;
+    }
+}
+
+//Inverted blue
+.cms-blue-back() {
+    .cms-base-button;
+    background-color: @cms-white;
+    color: @cms-reg-button;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: @cms-reg-button;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+
+    &:disabled {
+        background-color: @cms-disabled-button;
+    }
+}
+
+.cms-red-button() {
+    .cms-base-button;
+    color: @cms-white;
+    background-color: @cms-remove-mfa-button;
+
+    &:hover {
+        background-color: @cms-remove-mfa-button-hover;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+
+    &:focus {
+        background-color: @cms-remove-mfa-button-hover;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+
+    &:active {
+        background-color: @cms-remove-mfa-button-active;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+
+    &:disabled {
+        background-color: @cms-disabled-button;
+    }
+}
+
+.cms-reg-button() {
+    .cms-base-button;
+    color: @cms-white;
+    background-color: @cms-reg-button;
+
+    &:hover,
+    &:focus {
+        background-color: @cms-reg-button-hover;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+
+    &:active {
+        background-color: @cms-blue;
+        text-decoration: none;
+        color: @cms-white;
+        .cms-button-shadow;
+    }
+}
+
+//Alerts follow builders below.
+.cms-alert-warning() {
+    background-color: @cms-warning-status;
+}
+
+.cms-alert() {
+    background-position: 1rem 2rem;
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    margin-top: 1.5em;
+    padding: 1em;
+}
+
+// Background Images
+//Homepage-Login screen
+.cms-stage-background() {
+    //background-image: url("@{cms-images-path}/Portal2019.jpg");
+    //Testing new background
+    background-image: url("@{cms-images-path}/Stage20.jpg");
+}
+
+.cms-about-background() {
+    background-image: url("@{cms-images-path}/aboutsection-computerphone.jpg");
+    background-size: contain;
+}
+
+.cms-helpsignup-background() {
+    background-image: url("@{cms-images-path}/signup.jpg");
+    height: 230px;
+    margin-left: 60px;
+}
+
+.cms-helpsubscribe-background() {
+    background-image: url("@{cms-images-path}/subscriberpreferences.jpg");
+    height: 315px;
+    margin-left: 60px;
+}
+
+//Transitions
+.cms-transition(@transition-property: @transition-property;
+@transition-duration: @transition-duration;
+
+@transition-timing-function: @transition-timing-function) {
+    -webkit-transition: @transition-property @transition-duration @transition-timing-function;
+    -moz-transition: @transition-property @transition-duration @transition-timing-function;
+    -ms-transition: @transition-property @transition-duration @transition-timing-function;
+    -o-transition: @transition-property @transition-duration @transition-timing-function;
+    transition: @transition-property @transition-duration @transition-timing-function;
+}
+
+.cms-transitions(@transition-duration: @transition-duration;
+
+@transition-timing-function: @transition-timing-function) {
+    -webkit-transition: @transition-duration @transition-timing-function;
+    -moz-transition: @transition-duration @transition-timing-function;
+    -ms-transition: @transition-duration @transition-timing-function;
+    -o-transition: @transition-duration @transition-timing-function;
+    transition: @transition-duration @transition-timing-function;
+}
+
+//Transition duration on fields
+.cms-transition-duration(@property) {
+    -webkit-transition-duration: @property;
+    -moz-transition-duration: @property;
+    -ms-transition-duration: @property;
+    -o-transition-duration: @property;
+    transition-duration: @property;
+}
+
+//Header transition for scrolling
+.header-transition() {
+    .cms-transition(@transition-property: all;
+    @transition-duration: 2s;
+    @transition-timing-function: ease);
+}
+
+//Hover for nav links
+.cms-hover-navlinks() {
+    color: @cms-white;
+    background-color: @cms-dark-blue;
+    cursor: pointer;
+    .cms-transition(@transition-property: background-color;
+    @transition-duration: .5s;
+    @transition-timing-function: ease);
+}
+
+//Animations
+.cms-animation(@animation-property: @animation-property;
+
+@animation-duration: @animation-duration) {
+    -webkit-animation: @animation-property @animation-duration;
+    -moz-animation: @animation-property @animation-duration;
+    animation: @animation-property @animation-duration;
+}
+
+.cms-animation-name(@property) {
+    -o-animation-name: @property;
+    -ms-animation-name: @property;
+    -webkit-animation-name: @property;
+    -moz-animation-name: @property;
+    animation-name: @property;
+}
+
+.cms-animations(@animation-property: @animation-property;
+@animation-duration: @animation-duration;
+@animation-iteration-count: @animation-iteration-count;
+@ease: @ease;
+
+@clear: @clear) {
+    -webkit-animation: @animation-property @animation-duration @animation-iteration-count @ease @clear;
+    -moz-animation: @animation-property @animation-duration @animation-iteration-count @ease @clear;
+    animation: @animation-property @animation-duration @animation-iteration-count @ease @clear;
+}
+
+//Animation delay/duration
+.cms-animation-delay(@animation-duration: @animation-duration) {
+    -webkit-animation-delay: @animation-duration;
+    -moz-animation-delay: @animation-duration;
+    animation-delay: @animation-duration;
+}
+
+//Login Spinner Stuff
+.cms-animation-durations(@animation-duration: @animation-duration) {
+    animation-duration: @animation-duration;
+    -o-animation-duration: @animation-duration;
+    -ms-animation-duration: @animation-duration;
+    -webkit-animation-duration: @animation-duration;
+    -moz-animation-duration: @animation-duration;
+}
+
+.cms-animation-delays(@animation-delay: @animation-delay) {
+    animation-delay: @animation-delay;
+    -o-animation-delay: @animation-delay;
+    -ms-animation-delay: @animation-delay;
+    -webkit-animation-delay: @animation-delay;
+    -moz-animation-delay: @animation-delay;
+}
+
+.cms-animation-iteration-counts(@animation-iteration-count: @animation-iteration-counts) {
+    animation-iteration-count: @animation-iteration-count;
+    -o-animation-iteration-count: @animation-iteration-count;
+    -ms-animation-iteration-count: @animation-iteration-count;
+    -webkit-animation-iteration-count: @animation-iteration-count;
+    -moz-animation-iteration-count: @animation-iteration-count;
+}
+
+.cms-animation-directions(@animation-direction: @animation-direction) {
+    animation-direction: @animation-direction;
+    -o-animation-direction: @animation-direction;
+    -ms-animation-direction: @animation-direction;
+    -webkit-animation-direction: @animation-direction;
+    -moz-animation-direction: @animation-direction;
+}
+
+.cms-transforms(@transform-property) {
+    transform: @transform-property;
+    -o-transform: @transform-property;
+    -ms-transform: @transform-property;
+    -webkit-transform: @transform-property;
+    -moz-transform: @transform-property;
+}
+
+//Appearance
+.cms-appearance(@property) {
+    -webkit-appearance: @property;
+    -moz-appearance: @property;
+    -o-appearance: @property;
+    appearance: @property;
+}
+
+//Transform
+.cms-transform(@transform-property) {
+    -webkit-transform: @transform-property;
+    -moz-transform: @transform-property;
+    -ms-transform: @transform-property;
+    -o-transform: @transform-property;
+    transform: @transform-property;
+}
+
+//Opacity 
+.opacity(@opacity: @opacity-value) {
+    -webkit-opacity: @opacity;
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+
+//Box Shadow 
+.box-shadow(@property) {
+    -webkit-box-shadow: @property;
+    -moz-box-shadow: @property;
+    box-shadow: @property;
+}
+
+//2 shadows
+.box-shadow(@shadow1, @shadow2) {
+    -webkit-box-shadow: @shadow1, @shadow2;
+    -moz-box-shadow: @shadow1, @shadow2;
+    box-shadow: @shadow1, @shadow2;
+}
+
+//3 shadows
+.box-shadow(@shadow1, @shadow2, @shadow3) {
+    -webkit-box-shadow: @shadow1, @shadow2, @shadow3;
+    -moz-box-shadow: @shadow1, @shadow2, @shadow3;
+    box-shadow: @shadow1, @shadow2, @shadow3;
+}
+
+//4 shadows
+.box-shadow(@shadow1, @shadow2, @shadow3, @shadow4) {
+    -webkit-box-shadow: @shadow1, @shadow2, @shadow3, @shadow4;
+    -moz-box-shadow: @shadow1, @shadow2, @shadow3, @shadow4;
+    box-shadow: @shadow1, @shadow2, @shadow3, @shadow4;
+}
+
+//Icon Shadows - FA
+.cms-icon-shadow() {
+    text-shadow: 0 2px fade(@cms-dark-grey, 30%);
+}
+
+//Box Sizing
+.box-sizing(@property) {
+    -webkit-box-sizing: @property;
+    -moz-box-sizing: @property;
+    box-sizing: @property;
+}
+
+//User select
+.cms-user-select(@select-property) {
+    -webkit-user-select: @select-property;
+    -moz-user-select: @select-property;
+    -ms-user-select: @select-property;
+    user-select: @select-property;
+}
+
+//Buttons' hover/active/focus shadow
+.cms-button-shadow() {
+    .box-shadow(0px 5px 10px 1px fade(@cms-black, 18%), 0 0px 15px 1px fade(@cms-dark-grey, 15%));
+    .cms-transition(@transition-property: box-shadow;
+    @transition-duration: 0.3s;
+    @transition-timing-function: ease-in-out);
+}
+
+//Social Icons shadow
+.cms-socialIcons-shadow() {
+    text-shadow: 0px 5px 5px @cms-social-shadow;
+}
+
+//CMS standard box shadow ie. tables, fields, etc.
+.cms-standard-boxshadow() {
+    .box-shadow(0 2px 5px 0 fade(@cms-dark-grey, 16%), 0 2px 10px 0 fade(@cms-dark-grey, 12%));
+}
+
+//Adds hover filter darker - used on social icons
+.cms-hover-filter() {
+    .box-shadow (@property: inset 0 0 0 99999px fade(@cms-black, 20%));
+}
+
+//Alert Shadows
+.cms-alert-boxshadow() {
+    .box-shadow(0px 5px 10px 1px fade(@cms-black, 18%), 0 0px 15px 1px fade(@cms-dark-grey, 15%));
+}
+
+//Sets width to 100%
+.cms-expanded() {
+    width: 100%;
+}
+
+//Use border radius
+.border-radius (@border-radius: @border-radius) {
+    -webkit-border-radius: @border-radius;
+    -moz-border-radius: @border-radius;
+    border-radius: @border-radius;
+}
+
+//Sprites
+.cms-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+//Fonts' arguments
+.arguments-merriweather(@color: @cms-white;
+@font-family: @cms-font-merriweather;
+@line-height: 39px;
+@font-size: 17px;
+
+@font-weight: normal) {
+    color: @color;
+    line-height: @line-height;
+    font-family: @font-family;
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+
+.arguments-sourcesanspro(@color: @cms-white;
+@font-family: @cms-font-sourcesanspro;
+@line-height: 24px;
+@font-size: 17px;
+
+@font-weight: normal) {
+    color: @color;
+    line-height: @line-height;
+    font-family: @font-family;
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+
+//Bold
+.arguments-merriweather-bold(@color: @cms-white;
+@font-family: @cms-font-merriweather-bold;
+@line-height: 39px;
+@font-size: 17px;
+
+@font-weight: bold) {
+    color: @color;
+    line-height: @line-height;
+    font-family: @font-family;
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+
+.arguments-sourcesanspro-bold(@color: @cms-white;
+@font-family: @cms-font-sourcesanspro-bold;
+@line-height: 24px;
+@font-size: 17px;
+
+@font-weight: bold) {
+    color: @color;
+    line-height: @line-height;
+    font-family: @font-family;
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+
+.font-weight-style() {
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Adaptive Fields
+//Adaptive Placeholder text fields
+.adaptive_placeholder(@height, @radius, @margin: 1em, @border: 1px) {
+    @borders: (@border * 5);
+    background: @cms-light-blue;
+    border: @border solid fade(@cms-blue-border, 30%);
+    .box-sizing(border-box);
+    font-weight: 600;
+    height:~"calc(@{height} + @{borders})";
+    margin: 10px 0 @margin;
+    padding: 10px 10px;
+    resize: none;
+    .cms-expanded;
+    .cms-standard-boxshadow;
+    .border-radius (@border-radius: 0);
+    .cms-appearance(none);
+
+    &:focus {
+        border-color: @cms-field-focus;
+        margin-top: 10px;
+
+        +label,
+        +span {
+            &[placeholder] {
+                &:before {
+                    color: @cms-field-text-color;
+                }
+            }
+        }
+    }
+
+    &:focus,
+    &:valid {
+
+        +label,
+        +span {
+            &[placeholder] {
+                &:before {
+                    .cms-transition-duration(@property: .2s);
+                    .cms-transform(@transform-property: translate(0, (@margin * -1.5)) scale(.9, .9));
+                }
+            }
+        }
+    }
+
+    &:invalid {
+
+        +label,
+        +span {
+            &[placeholder] {
+                &[alt] {
+                    &:before {
+                        content: attr(alt);
+                    }
+                }
+            }
+        }
+    }
+
+    &:disabled {
+        background: @cms-disabled-bg;
+        pointer-events: none;
+        cursor: not-allowed;
+        .cms-user-select (@select-property: none);
+        border-left: 5px solid @cms-black;
+
+        +label,
+        +span {
+            &[placeholder] {
+                &:before {
+                    //background-color: @cms-disabled-bg;
+                    background-image: none;
+                    color: @cms-black;
+                    display: block;
+                    margin:~"-1.6em calc(@{margin} + @{borders})";
+                    background-image: linear-gradient(to bottom, transparent, @cms-disabled-bg);
+                }
+            }
+        }
+    }
+
+    +label,
+    +span {
+        &[placeholder] {
+            display: block;
+            pointer-events: none;
+            line-height: @margin * 1.25;
+            margin-top:~"calc(-@{height} - @{borders})";
+            margin-bottom: 25px;
+            //Test remove to equalize height
+            position: absolute;
+
+            &:before {
+                content: attr(placeholder); // Content property 2 of 2
+                display: inline-block;
+                // margin: 0~"calc(@{margin} + @{borders})";
+                margin: 0~"calc(@{margin} + -7px)";
+                padding: 0 2px;
+                color: @cms-field-text-color;
+                white-space: nowrap;
+                .cms-transition(@transition-property: all;
+                @transition-duration: .3s;
+                @transition-timing-function: ease-in-out);
+                background-image: linear-gradient(to bottom, @cms-light-blue, @cms-light-blue);
+                background-size: 100% 20px;
+                background-repeat: no-repeat;
+                background-position: center;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//MegaMenu items
+
+.cms-menu-items() {
+    clear: both;
+    color: @cms-white;
+    background-color: @cms-dark-blue;
+    text-align: left;
+
+    &>a {
+        padding: 5px;
+        color: @cms-white;
+
+        &:link,
+        &:visited {
+            background-color: @cms-dark-blue  !important;
+        }
+    }
+}

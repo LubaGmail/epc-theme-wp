@@ -1,0 +1,54 @@
+@import "variables";
+
+.cms-footer {
+    background-color: @cms-footer;
+    padding: 60px 0;
+    height: 200px;
+    .arguments-sourcesanspro (@color: @cms-black;
+    @font-weight: 100;
+    @font-size: 18px);
+}
+
+.cms-social-icon-list {
+    float: right;
+    list-style-type: none;
+}
+
+.cms-social-twitter {
+    .cms-socialIcons-shadow;
+    color: @cms-twitter-blue;
+}
+
+.cms-social-youtube {
+    .cms-socialIcons-shadow;
+    color: @cms-youtube-red;
+}
+
+.cms-social-rssfeed {
+    .cms-socialIcons-shadow;
+    color: @cms-rss-orange;
+}
+
+.cms-social-icon-list .cms-social-icon {
+    float: left;
+    margin-right: .1em;
+    font-size: 3em;
+    transition: all 200ms ease-in;
+    transform: scale(1);
+
+    &:hover {
+        transition: all 200ms ease-in;
+        transform: scale(1.2);
+        z-index: 1000000000;
+        position: relative;
+    }
+}
+
+.cms-footer-copy-container {
+    text-align: center;
+}
+
+.cms-social-icons-container,
+.cms-logo-container {
+    .nopadding;
+}

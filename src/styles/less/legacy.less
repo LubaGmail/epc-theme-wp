@@ -1,0 +1,116 @@
+@import "variables";
+
+//Lotus componets
+.lotusWarning {
+    background-color: @lotus-warning-bkgnd;
+    border: 1px solid @lotus-warning-border;
+    margin: 15px;
+    .border-radius (@border-radius: 5px);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+//Vertical components
+
+//ELMO - PRIS
+.cms-min-height-900 {
+    min-height: 900px;
+}
+
+.cms-min-height-1200 {
+    min-height: 1200px;
+}
+
+//EPPE
+
+input[class^="epp_"],
+input[id^="epp_"] {
+
+    &[type="button"],
+    &[type="submit"] {
+        font-weight: 600;
+        color: @cms-white;
+        background-color: @legacy-blue;
+        text-align: center;
+        border: 0;
+        .border-radius (@border-radius: 10px);
+        text-decoration: none;
+        margin-right: 4px;
+    }
+}
+
+#epp_prevDuaPage_button,
+#epp_nextDuaPage_button,
+#epp_previousMyAccessButton,
+#epp_nextMyAccessButton,
+#epp_saveMyAccessButton,
+#epp_goBackToPortal,
+.backToSearch,
+.addRoleRequest {
+    font-weight: 600;
+    color: @cms-white;
+    background-color: @legacy-blue;
+    text-align: center;
+    border: 0;
+    .border-radius (@border-radius: 10px);
+    text-decoration: none;
+    margin-right: 4px;
+}
+
+[class^="epp_"] {
+
+    &>.saveAndQuitButton,
+    &>.approvedDuaLink,
+    &>[class^="add"] {
+        font-weight: 600;
+        color: @cms-white;
+        background-color: @legacy-blue;
+        text-align: center;
+        border: 0;
+        .border-radius (@border-radius: 10px);
+        text-decoration: none;
+        margin-right: 4px;
+    }
+}
+
+.epp_review_element,
+.epp_contactElement_review {
+    padding-top: 2px;
+
+    & label {
+        font-weight: 100;
+        margin-bottom: 0;
+    }
+}
+
+.epp_review_element {
+    &>table {
+        border-collapse: separate;
+    }
+}
+
+.epp_review_page {
+    & h5 {
+        font-weight: 700;
+        padding: 10px 0px 10px 2px;
+    }
+
+    & h4 {
+        padding-bottom: 10px;
+    }
+}
+
+.epp_centerContainerDiv>div>fieldset {
+    margin: 15px;
+}
+
+//IC 
+#cicdim-app-table {
+    margin: 0 !important;
+}
+
+
+//PV
+.ui-selectonemenu-items-wrapper {
+    -ms-overflow-style: scrollbar;
+}

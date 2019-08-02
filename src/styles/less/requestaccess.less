@@ -1,0 +1,29 @@
+@import "variables";
+
+.cms-application-description,
+.cms-role-description {
+    background-color: @cms-info-box;
+    .cms-alert-boxshadow;
+    border-left: 8px solid @cms-bright-blue;
+    .border-radius (@border-radius: 0);
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.cms-application-description {
+    &:before {
+        font-family: FontAwesome, @cms-font-sourcesanspro;
+        content: '\f05a\ Application Description: ';
+        font-weight: bold;
+    }
+
+}
+
+.cms-role-description {
+    &:before {
+        font-family: FontAwesome, @cms-font-sourcesanspro;
+        content: '\f05a\ Role Description: ';
+        font-weight: bold;
+    }
+
+}

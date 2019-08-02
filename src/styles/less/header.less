@@ -1,0 +1,334 @@
+@import "variables";
+
+.cms-header-out {
+    .box-shadow(@property: 0 1px 10px @cms-lighter-grey);
+    .cms-header-in;
+}
+
+.cms-header-in {
+    z-index: @zindex-navbar;
+    overflow: visible;
+    background-color: @cms-blue;
+    border-bottom: 1px solid @cms-darker-blue;
+    max-height: 50px;
+}
+
+.navbar-default .navbar-toggle {
+    border: 0;
+    color: @cms-white;
+}
+
+.container.header-container {
+    padding: 0 10px;
+    width: 95% !important;
+    background-color: @cms-blue;
+}
+
+.cms-header-toggle {
+    background-color: @cms-blue;
+    color: @cms-white;
+    font-size: 30px;
+    margin-bottom: 0 !important; // Overwrite bootstrap.
+}
+
+.cms-header-link .fa,
+#logoutlink .fa {
+    margin-right: 5px;
+}
+
+.cms-myprofile-menu {
+
+    &:hover,
+    &:focus,
+    &:active {
+        .cms-hover-navlinks;
+    }
+}
+
+.cms-header-link>.dropdown-menu.cms-myprof-menu {
+    background-color: @cms-dark-blue;
+    color: @cms-white;
+    left: 0;
+    padding: 20px 0;
+}
+
+.dropdown-item.cms-myprof-item>.cms-auth-myprofile {
+    color: @cms-white;
+    font-size: 17px;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: underline;
+        background-color: inherit;
+    }
+}
+
+.cms-myprof-item {
+    margin-bottom: 10px;
+}
+
+.cms-subscriptions {
+    .nopadding-left;
+}
+
+.cms-as {
+    color: @cms-subscriber;
+}
+
+.cms-mys-pp {
+    font-size: 12px;
+    padding: 0;
+    list-style-type: none;
+
+    .cms-sub-opts {
+        color: @cms-white;
+        text-decoration: underline;
+    }
+}
+
+.cms-mobile-email {
+    .cms-login-field;
+}
+
+.cms-subscribe-btn {
+    color: @cms-white;
+}
+
+.cms-subscribe-more {
+    background-color: @cms-subscribe-modal;
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid @cms-modal-sub-border;
+}
+
+.cms-modal-as {
+    font-style: italic;
+}
+
+.cms-sub-opts-modal {
+    color: @cms-header-lightblue;
+    font-size: 14px;
+}
+
+.cms-header-links-container {
+    &>.cms-header-links-item>.cms-header-link {
+        color: @cms-white;
+        font-family: @cms-font-sourcesanspro;
+        text-transform: capitalize;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 18px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            .cms-hover-navlinks;
+        }
+
+        &:focus {
+            outline: thin dotted;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+    }
+}
+
+.nav .open>.cms-myprofile-menu {
+    background-color: @cms-dark-blue;
+}
+
+#cms-welcome-user {
+    background-color: @cms-welcome-blue;
+    border-left: 1px solid @cms-welcome-border;
+    border-right: 1px solid @cms-welcome-border;
+    //Cutting users name when too long.
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cms-spacer {
+    display: inline-block;
+    width: 10px;
+}
+
+#cms-welcome-user-caret {
+    position: absolute;
+    right: 0;
+    padding-left: 12px;
+    margin-left: 5px;
+    margin-right: 8px;
+    font-size: 24px;
+    vertical-align: sub;
+}
+
+//Hamburger
+.cms-nav-icon {
+    width: 35px;
+    height: 45px;
+    position: relative;
+    .cms-transform(@transform-property: rotate(0deg));
+    .cms-transitions(@transition-duration: 0.5s;
+    @transition-timing-function: ease-in-out);
+    cursor: pointer;
+}
+
+.cms-nav-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: @cms-white;
+    left: 0;
+    .border-radius (@border-radius: 2px);
+    .opacity (@opacity: 1);
+    .cms-transform(@transform-property: rotate(0deg));
+    .cms-transitions(@transition-duration: .25s;
+    @transition-timing-function: ease-in-out);
+}
+
+.cms-nav-icon span:nth-child(1) {
+    top: 5px;
+}
+
+.cms-nav-icon span:nth-child(2),
+.cms-nav-icon span:nth-child(3) {
+    top: 12px;
+}
+
+.cms-nav-icon span:nth-child(4) {
+    top: 19px;
+}
+
+.cms-nav-icon span:nth-child(5) {
+    top: 26px;
+}
+
+.cms-nav-icon.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+.cms-nav-icon.open span:nth-child(2) {
+    .cms-transforms(rotate(45deg));
+}
+
+.cms-nav-icon.open span:nth-child(3) {
+    .cms-transforms(rotate(-45deg));
+}
+
+.cms-nav-icon.open span:nth-child(5),
+.cms-nav-icon.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+//Badge
+.cms-badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: @cms-white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: @cms-red;
+    .border-radius (@border-radius: 10px);
+    position: absolute;
+    top: 5px;
+    left: 25px;
+}
+
+.cms-notifications-text {
+    display: none;
+}
+
+//My Apps 
+
+.cms-nav-myapps-container {
+    text-align: center;
+    padding: 14px 15px 10px 15px;
+
+    &:hover,
+    &:focus,
+    &:active {
+        .cms-hover-navlinks;
+    }
+
+    &>.cms-header-link {
+        color: @cms-white;
+        font-size: 17px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: @cms-dark-blue;
+        }
+    }
+}
+
+.cms-header-notice {
+    color: @cms-white;
+    font-size: 2em;
+    font-family: @cms-font-sourcesanspro;
+    margin-top: 10px;
+
+    &>.fa {
+        font-size: 2em;
+        vertical-align: sub;
+    }
+}
+
+//Fix ACO issue.
+#cms-View-myApps-HeaderContainer {
+    &>.main {
+        &>.container {
+            padding: 0;
+        }
+    }
+}
+
+
+//Menu Skin Titles
+
+#cms-portlet-title-header {
+    /*overflow: hidden;*/
+}
+
+#cms-portlet-title-header:before,
+#cms-portlet-title-header:after {
+    content: "";
+    display: table;
+}
+
+#cms-portlet-title-header:after {
+    clear: both;
+}
+
+#cms-portlet-title-header .dndHandle,
+#cms-portlet-title-header .stActionMenu {}
+
+#cms-portlet-title-header .dndHandle {
+    float: left;
+}
+
+#cms-portlet-title-header .stActionMenu {
+    float: right;
+    position: relative;
+    top: 1rem;
+}
+
+#cms-portlet-title-header .fa.fa-navicon {
+    font-size: 2rem;
+    display: block;
+    color: @cms-white;
+    height: 2.5rem;
+    width: 2.5rem;
+    text-align: center;
+}

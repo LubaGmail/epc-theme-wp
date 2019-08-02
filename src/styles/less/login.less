@@ -1,0 +1,300 @@
+@import "variables";
+
+
+//Login Portlet
+
+.cms-logo-container-login>.cms-icon {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.cms-login-form,
+.cms-newreg-container {
+    background-color: @cms-login-form;
+    color: @cms-white;
+    padding: 20px 50px;
+    max-width: 500px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-family: @cms-font-sourcesanspro;
+    .border-radius (@border-radius: 5px);
+    .auto-margin;
+    .opacity (@opacity: .99);
+    .box-shadow(0px 1px 10px 1px rgba(0, 0, 0, 0.18), 0 1px 15px 1px rgba(0, 0, 0, 0.15));
+}
+
+.cms-login-form>.cms-icon.cms-sprite-loggedout {
+    .auto-margin;
+    margin-bottom: 20px;
+}
+
+.cms-p-chp-l .fa {
+    margin-right: 5px;
+}
+
+.cms-login-form a {
+    color: @cms-white;
+    text-decoration: underline;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+        color: @cms-white;
+    }
+}
+
+.cms-stage {
+    &>.cms-login-container {
+        padding: 14vh 1vw;
+        .cms-expanded;
+        .cms-stage-background;
+        background-size: cover;
+        // .box-shadow(@property: inset 0 0 0 99999px fade(@cms-white, 55%));
+        .box-shadow(@property: inset 0 0 0 99999px fade(@cms-lighter-grey, 75%));
+        background-attachment: fixed;
+    }
+
+    &>.cms-newreg-container {
+        padding: 10px 0 10px 0;
+    }
+}
+
+.cms-login-input-field {
+    .nopadding;
+}
+
+.cms-login-links-container {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    .nopadding;
+}
+
+.cms-subscribe-btn,
+.cms-subscribe-btn-modal {
+    .cms-green-button;
+    border: 0;
+}
+
+// .cms-login-btn, 
+.termsAndCondNext {
+    .cms-green-button;
+    text-align: center;
+}
+
+.cms-sendcode-btn,
+.cms-sendmfa-login,
+.cms-edit-mfa-btn {
+    font-size: .8em !important;
+    padding: 14px !important;
+    .cms-reg-button;
+    .cms-expanded;
+    border: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+        .cms-button-shadow;
+    }
+}
+
+.cms-newuser-reg {
+    .cms-reg-button;
+    .cms-expanded;
+    border: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+        .cms-button-shadow;
+    }
+}
+
+
+.cms-add-app {
+    font-size: .9em !important;
+    .cms-reg-button;
+    border: 0;
+    margin-bottom: .5em;
+
+    &:hover,
+    &:active,
+    &:focus {
+        .cms-button-shadow;
+    }
+}
+
+.cms-newreg-container {
+    text-align: center;
+
+    &>.cms-new-regbtn-container {
+        padding: 0;
+    }
+}
+
+.cms-rfnfp-links {
+    font-weight: 100;
+    margin-top: 20px;
+    .nopadding;
+}
+
+.cms-tos-link {
+    display: block;
+    color: @cms-white;
+    .nopadding;
+
+    #checkd {
+        margin: 5px;
+    }
+}
+
+.cms-tos-link>.checkbox {
+    margin: 0;
+}
+
+.cms-terms {
+    text-decoration: underline;
+    color: @cms-white;
+}
+
+.cms-terms-nur {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.cms-find-about {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//MFA on login
+.cms-mfa-link {
+    margin-bottom: 20px;
+}
+
+.cms-login-sendmfa-button-container {
+    .nopadding-left;
+}
+
+.cms-login-sendmfa-field-container {
+    .nopadding-right;
+}
+
+.cms-login-sendmfa-email-container {
+    .no-lateral-padding;
+}
+
+.cms-login-mfa-area {
+    padding-bottom: 2em;
+    display: block;
+}
+
+#mfaLoginArea {
+    margin-bottom: 1em;
+}
+
+#cms-send-code-phone,
+#infoMessage {
+    margin-bottom: 20px;
+}
+
+#allFieldsOfReset>#cms-reset-password {
+    margin-bottom: 1em;
+}
+
+//MFA Login errors
+.cms-login-password-container>.cms-login-mfaokt-alert,
+.cms-login-passphrase-container>.cms-login-mfaokt-alert,
+.cms-login-mfa-field-container>.cms-login-mfaokt-alert {
+    color: @cms-black;
+
+    &>.fa-exclamation-circle {
+        color: @cms-red;
+    }
+}
+
+.cms-button-login-spacer {
+    margin: 2em 0;
+}
+
+//Home Widgets
+.cms-home-widgets {
+    overflow: auto;
+    background-color: @cms-blue;
+    padding: 28vh 0;
+    font-size: 17px;
+}
+
+.cms-hw-container {
+    padding: 5vh 0;
+}
+
+.cms-rfnfp>.cms-news-item>a {
+    color: @cms-login-list;
+    font-size: 14px;
+    margin-bottom: 100px;
+}
+
+//TODO's Removed inline styles from login. Temporarily using IDs. Will be fixed in future iterations.
+
+#floatingBarsG,
+#recoveryPassPhraseDiv {
+    display: none;
+}
+
+#manualCodeEntryLinkDiv {
+    padding-top: 15px;
+}
+
+#instructions {
+    font-size: 15px;
+}
+
+#mfaFactorTwoDiv {
+    padding-bottom: 35px;
+    padding-top: 35px;
+}
+
+#mfaFactorTwoDesc,
+#mfaFactorOneDesc {
+    font-size: small;
+}
+
+#mfaFactorTwoRegisterFields,
+#mfaFactorTwoRegisterCodeFields,
+#finishButtonArea {
+    padding-top: 20px;
+}
+
+#mfaFactorOneDiv {
+    padding-top: 40px;
+}
+
+
+
+//END TODO.
+
+//About Section
+.cms-home-widgets-about>.container.cms-find-about {
+    padding: 12em 0;
+    .arguments-sourcesanspro (@color: @cms-black;
+    @font-weight: 100;
+    @font-size: 18px);
+}
+
+
+.cms-about {
+    &>.cms-aboutleft {
+        .cms-about-background;
+        background-repeat: no-repeat;
+        display: block;
+        height: 20em;
+    }
+
+    &>.cms-aboutright {
+        padding: 100px 0;
+    }
+}

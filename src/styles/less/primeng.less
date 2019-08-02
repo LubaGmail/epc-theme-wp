@@ -1,0 +1,104 @@
+@import "variables";
+
+//Used for Pending Approvals.
+.cms-card {
+    .cms-standard-boxshadow;
+}
+
+.ui-table>.ui-table-caption>.cms-filters-container {
+    background-color: @cms-blue;
+    padding: 1em;
+    color: @cms-white;
+    .cms-standard-boxshadow;
+
+    &>.cms-th {
+        border: none;
+
+        &>a {
+            color: @cms-white;
+        }
+    }
+}
+
+.cms-primeng-reg-field {
+    .border-radius (@border-radius: 0);
+    color: @cms-black;
+    background: @cms-light-blue;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    border: 1px solid fade(@cms-blue-border, 30%);
+    font-size: 17px;
+    font-weight: 600;
+    .cms-appearance(none);
+    .cms-standard-boxshadow;
+
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder {
+        color: @cms-field-text-color;
+    }
+
+    &:disabled {
+        background-color: @cms-disabled-bg;
+        pointer-events: none;
+        cursor: not-allowed;
+        .cms-user-select (@select-property: none);
+        border-left: 5px solid @cms-black;
+        color: @cms-black;
+    }
+
+    &>.ui-calendar>.ui-inputtext {
+        border: none;
+        background-color: inherit;
+    }
+}
+
+.ui-datepicker,
+.ui-dropdown-items-wrapper {
+    background-color: @cms-white;
+}
+
+//Used for regularizing checkboxes.
+[id^=cms-chkbx-] {
+    &>.ui-chkbox {
+        &>.ui-chkbox-box {
+            width: 1em;
+            height: 1em;
+
+            &>.ui-chkbox-icon {
+                display: flex;
+                background: @cms-white;
+                box-shadow: 0 0 0 1px @cms-chkbx-bckg;
+                height: inherit;
+
+                &.pi-check:before {
+                    content: "\e909";
+                    color: @cms-white;
+                    background: @cms-chkbx-bckg;
+                }
+            }
+        }
+    }
+}
+
+//Radio buttons.
+.cms-ang-radio {
+    &>.ui-radiobutton {
+        &>.ui-radiobutton-box {
+            background: @cms-white;
+            .box-shadow(@property: 0 0 0 2px @cms-chkbx-bckg);
+            .border-radius (@border-radius: 100%);
+            margin-right: .5em;
+            margin-bottom: .2em;
+
+            &>.ui-radiobutton-icon {
+                &::before {
+                    background-color: @cms-chkbx-bckg;
+                    .box-shadow(@shadow1: 0 0 0 4px @cms-chkbx-bckg, @shadow2: 0 0 0 4px @cms-white);
+                    .border-radius (@border-radius: 100%);
+
+                }
+            }
+        }
+    }
+}

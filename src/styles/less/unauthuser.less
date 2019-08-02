@@ -1,0 +1,138 @@
+@import "variables";
+
+//Forgot User ID
+//TODO removed inline style on icon.
+#cms-forgotuid-syserroricon {
+    color: indianred;
+}
+
+//Forgot Password  & Unlock User account.
+.form-group {
+
+    &.cms-forgotpassword-group,
+    &.cms-unlockuseracc-group {
+        overflow: hidden;
+        clear: both;
+        padding-left: 0;
+    }
+}
+
+.cms-forgotpassword-group>.cms-forgot-passwords-fields,
+.cms-unlockuseracc-group>.cms-unlockuseracc-fields {
+    padding-left: 0;
+}
+
+//Forgot Password OKTA
+.cms-forgot-password-personaldetailsform>.cms-mfa-button-container {
+    padding-left: 0;
+}
+
+.cms-mfa-newpassword-container {
+    position: relative;
+}
+
+//New User Registration
+
+//Scroll-Box
+.cms-scroll-box {
+    background: @cms-light-blue;
+    border: 1px solid @cms-blue-border;
+    font-family: @cms-font-helvetica;
+    height: 220px;
+    margin: 0 0 20px 0;
+    overflow: auto;
+    padding: 0 20px 20px 15px;
+    .cms-animation(@animation-property: opac;
+    @animation-duration: 2s);
+    .cms-standard-boxshadow;
+}
+
+.container.cms-fields-container {
+    padding: 0 5px;
+}
+
+.cms-tos-reg {
+    color: @cms-black;
+    margin-left: 10px;
+}
+
+#cms-int .form-group,
+.cms-forgot-userid-form .form-group {
+    margin: 20px 0;
+    clear: both;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+#cms-int .cms-profile-box .form-group,
+#cms-register-mfa-box .form-group,
+#cms-remove-mfa-box .form-group {
+    overflow: initial;
+}
+
+.form-group.cms-last-row {
+    padding-top: 50px;
+}
+
+.cms-reg-label {
+    .arguments-sourcesanspro (@color: @cms-field-text-color;
+    @font-size: 17px;
+    @font-weight: 600);
+}
+
+.cms-agree-item {
+    margin-bottom: 20px;
+}
+
+.cms-agree-item-mod {
+    margin: 20px;
+}
+
+.change-profile-info {
+    &:disabled {
+        background-color: @cms-disabled-bg;
+        pointer-events: none;
+        cursor: not-allowed;
+        .cms-user-select (@select-property: none);
+        border-left: 5px solid @cms-black;
+        color: @cms-black;
+    }
+}
+
+//Help portlet styles.
+.cms-emailupdates {
+    .cms-helpsignup-background;
+    background-repeat: no-repeat;
+    display: block;
+    background-size: contain;
+}
+
+.cms-alert-dlist {
+    .cms-helpsubscribe-background;
+    background-repeat: no-repeat;
+    display: block;
+    background-size: contain;
+}
+
+.cms-quest-container {
+    padding: 10px;
+
+    &>.cms-h3 {
+        padding: 10px 0;
+    }
+
+    &>.cms-faq-qst {
+        padding: 10px 10px 0 20px;
+        font-size: 18px;
+        .arguments-merriweather-bold (@color: @cms-h4;
+        @line-height: 22px;
+        @font-weight: 700);
+    }
+
+    &>.cms-faq-ans {
+        padding: 0 0 0 30px;
+        .arguments-sourcesanspro (@color: @cms-reg-grey;
+        @font-weight: 100);
+        font-size: 17px;
+    }
+}

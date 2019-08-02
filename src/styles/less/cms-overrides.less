@@ -1,0 +1,181 @@
+//Use of these classes should be on a limited basis as they are designed to overwrite websphere.
+
+.cms {
+    .cms-general-base;
+}
+
+header {
+    height: 50px;
+    max-height: 50px;
+}
+
+.layoutRow.ibmDndRow {
+    .cms-expanded;
+}
+
+.stMainContent.wpthemeMainContent {
+    padding: 0;
+    background: @cms-white;
+}
+
+.nopadding() {
+    padding: 0 !important;
+}
+
+.no-lateral-padding() {
+    .nopadding-left;
+    .nopadding-right;
+}
+
+.nopadding-left() {
+    padding-left: 0 !important;
+}
+
+.nopadding-right() {
+    padding-right: 0 !important;
+}
+
+.nomargin() {
+    margin: 0 !important;
+}
+
+.nomargin-left() {
+    margin-left: 0 !important;
+}
+
+.nomargin-right() {
+    margin-right: 0 !important;
+}
+
+.no-border() {
+    border: 0 !important;
+}
+
+.auto-margin() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cms-hide,
+.cms-empty {
+    display: none;
+}
+
+//Overrides for header megamenu
+
+#cms-View-myApps-HeaderContainer {
+    position: fixed;
+    width: 100%;
+}
+
+#ViewMyApps_container_Sub {
+    height: auto;
+    overflow-x: hidden;
+    max-height: 500px;
+    background-color: @cms-dark-blue;
+    //-ms-overflow-style: none;  // IE 10+ hide scrollbar
+    //overflow: -moz-scrollbars-none;  // Firefox hide scrollbar
+    .box-shadow(@property: 5px 5px 20px @cms-dark-grey);
+    padding: 10px;
+    .cms-ie-show-scroll;
+}
+
+//Hide Scrollbar - general
+.cms-hide-scroll {
+    -ms-overflow-style: none; // IE 10+ hide scrollbar
+    overflow: -moz-scrollbars-none; // Firefox hide scrollbar
+    scrollbar-width: none; // Firefox 64+ hide scrollbar
+
+    &::-webkit-scrollbar {
+        display: none; //Chrome hide scrollbar
+    }
+}
+
+.cms-ie-show-scroll {
+    -ms-overflow-style: scrollbar;
+}
+
+// Overrides used on lightSkin 
+.ibmPortalControl.stControl.wpthemeControl.a11yRegionTarget.cmsLightSkin {
+    border: 1px solid @cms-blue;
+    overflow: auto;
+    margin: 10px;
+
+    &>.stControlBody.stOverflowAuto.wpthemeControlBody {
+        padding: 1.5em;
+    }
+}
+
+#cms-portlet-title-header-container {
+    padding: 0 10px;
+    background: @cms-blue;
+    border: 2px solid fade(@cms-blue-border, 90%);
+}
+
+#cms-portlet-title-header {
+    overflow: hidden;
+}
+
+#cms-portlet-h2 {
+
+    &>span,
+    &>span>span {
+        display: block;
+        text-shadow: none;
+        color: @cms-white;
+        font-family: 'Merriweather Bold', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+        font-size: 26px;
+        font-weight: bold;
+    }
+}
+
+#tblMain {
+    padding: 2px;
+}
+
+//Override on help portlet
+.cms-show.cms-help.alert.alert-info {
+    .cms-alert-boxshadow;
+    border-left: 8px solid @cms-bright-blue;
+    .border-radius (@border-radius: 0);
+    border-top: 0;
+    border-bottom: 0;
+    color: @cms-black;
+    padding: 1em;
+
+    &>.cms-h2-error {
+        color: @cms-black;
+
+        &>.fa {
+            margin-right: 10px;
+        }
+    }
+}
+
+.cms-spinner-block {
+    pointer-events: none;
+    cursor: not-allowed;
+    .opacity (@opacity: .85);
+    .cms-user-select (@select-property: none);
+}
+
+// Demo Name
+#welcomeName {
+    text-transform: capitalize;
+}
+
+//Exclusive fix for media query overlap on nav
+@media (min-width: 768px) and (max-width: 768px) {
+    .nav.navbar-nav.navbar-right.cms-header-links-container {
+        font-size: .9em;
+    }
+    #cms-welcome-user-caret {
+        right: 0 !important;
+    }
+    #cms-welcome-user {
+        max-width: 210px;
+    }
+    .cms-notifications-text{
+        display: none !important;
+    }
+}

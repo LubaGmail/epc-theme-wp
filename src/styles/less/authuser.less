@@ -1,0 +1,391 @@
+@import 'variables.less';
+
+//My apps Megamenu - mega_menu_navigation.jsp
+.cms-myapps-container {
+    .cms-expanded;
+}
+
+//My apps megamenu from header
+.stParentClass.cms-myapps-label {
+    color: @cms-myapps-label;
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.stParentClass.cms-myapps-page {
+    color: @cms-white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.stParentContainer.cms-myapps-label-container {
+    &>.stNavChild>li {
+        .cms-menu-items;
+        color: @cms-myapps-label;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px;
+    }
+}
+
+.cms-grandchild-list>.cms-grandchild-item {
+    .cms-menu-items;
+    color: @cms-lighter-grey;
+    font-size: 15px;
+    margin-left: 20px;
+    padding: 5px 0;
+}
+
+.stOpenNavLevel.stSecondLevelNav.viewALL.cms-view-allapps {
+    background-color: @cms-dark-blue;
+    position: absolute;
+    margin-top: 200px;
+}
+
+.cms-all-apps>.cms-view-myapps-container-megamenu {
+    position: absolute;
+    z-index: 1001;
+    border: 0;
+}
+
+//Centered Tiles
+
+/* centered columns styles */
+.row.row-centered {
+    text-align: center;
+}
+
+.stParentContainer.col-centered {
+    display: inline-block;
+    float: none;
+}
+
+.cms-h1-interior.cms-myapps-title {
+    text-align: left;
+}
+
+//Sets the blue filter on top of the picture
+
+#cms-int {
+    .cms-expanded;
+    font-family: @cms-font-sourcesanspro;
+    font-size: 16px;
+    padding: 0 0 100px 0;
+    background-color: @cms-white;
+    overflow: hidden;
+}
+
+.cms-megamenublock {
+    background: @cms-light-blue;
+    border: 1px solid @cms-blue-myapps-border;
+    color: @cms-field-text-color;
+    font-size: 16px;
+    height: 200px;
+    padding: 50px;
+    text-align: center;
+    .cms-standard-boxshadow;
+    .cms-expanded;
+    .border-radius (@border-radius: 0);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    overflow: hidden;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.cms-active {
+        background-color: @cms-dark-blue;
+        border: none;
+        color: @cms-white;
+        text-decoration: none;
+        .cms-transition(@transition-property: background-color;
+        @transition-duration: .5s;
+        @transition-timing-function: ease);
+        .box-shadow(@property: 5px 5px 20px @cms-dark-grey);
+        transition: all 200ms ease-in;
+        transform: scale(1.05);
+    }
+
+    &>.cms-info-icon-mmblock {
+        position: absolute;
+        top: 5px;
+        font-size: 25px;
+        right: 1px;
+        margin-right: .5em;
+    }
+}
+
+// #allTiles i.fa {
+//     font-size: 3em;
+//     margin-bottom: 15px;
+//     .cms-icon-shadow;
+
+//     &:hover {
+//         color: @cms-white;
+//     }
+// }
+
+//My apps widgets - view EnterprisePortalMyAppsWidgets project.
+
+#cms-content {
+    padding: 0 0 120px 0;
+}
+
+//Open menus
+.stNavListItem>div[id$="_container"] {
+    position: absolute;
+    margin-top: 200px;
+    z-index: 1000;
+    padding: 10px;
+    .box-shadow(@property: 0 10px 20px @cms-dark-grey);
+    margin-bottom: 10px;
+}
+
+div[id*="_container"] {
+    background-color: @cms-dark-blue;
+
+    &:not(#ViewAllApps_container) {
+        &>.stParentContainer.col-sm-4.cms-myapps-label-container {
+            padding-left: 0;
+            font-family: @cms-font-sourcesanspro;
+        }
+    }
+}
+
+//My Profile
+
+//Interior Navigation
+.cms-myprofile-sidenav-container {
+    margin-top: 40px;
+}
+
+.cms-myprofile-divider {
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: list-item;
+}
+
+.cms-fields-container .cms-interior-navigation {
+    border: 1px solid @cms-light-grey;
+    list-style-type: none;
+    margin: 44px 0 3em 0;
+    padding: 0;
+    .cms-standard-boxshadow;
+
+    & li {
+        &:hover {
+            background-color: @cms-white;
+        }
+    }
+
+    & .active {
+        background: @cms-light-blue;
+        border-left: 2px solid @cms-lightblue-border;
+    }
+
+    & .last {
+        border-bottom: none;
+    }
+
+    & li a {
+        border-bottom: 1px solid @cms-light-grey;
+        display: block;
+        list-style-type: none;
+        padding: 15px 10px 25px 10px;
+        transition: all 100ms ease-in;
+        transform: scale(1);
+
+        &:hover,
+        &:focus {
+            transition: all 100ms ease-in;
+            transform: scale(1.02);
+            text-decoration: none;
+        }
+    }
+}
+
+.cms-mfa-srs-btn {
+    .cms-reg-button;
+    .cms-expanded;
+    border: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+        .cms-button-shadow;
+    }
+}
+
+.cms-rotate180 {
+    transition: all 150ms ease-in;
+    transform: rotateY(180deg);
+}
+
+.cms-fields-container ul li a:hover {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cms-box {
+    border: 1px solid fade(@cms-blue-border, 30%);
+    margin-bottom: 20px;
+    .cms-standard-boxshadow;
+    .cms-expanded;
+
+    &>p {
+        background: fade(@cms-lightblue-filter, 25%);
+    }
+}
+
+.cms-exp-divider {
+    border-top: 10px solid @cms-blue-border;
+}
+
+.cms-mp-action-box {
+    //clear: both;
+    //overflow: hidden;
+}
+
+.cms-prof-var {
+    margin-left: 10px;
+}
+
+.cms-box>.cms-box-body>.cms-tr>.cms-th {
+    background: fade(@cms-lightblue-filter, 25%);
+}
+
+.cms-box>.cms-box-body>.cms-tr>.cms-td {
+    background: fade(@cms-lightblue-filter, 13%);
+}
+
+#cms-viewprofile-box>.cms-box {
+    margin-top: 34px;
+}
+
+#cms-register-mfa-box>.cms-general-base.form-group {
+    margin-top: 40px;
+    .arguments-sourcesanspro (@color: @cms-black;
+    @font-weight: 100;
+    @font-size: 18px);
+}
+
+.cms-box p {
+    border-bottom: 1px solid fade(@cms-blue-border, 30%);
+    color: @cms-profile-blue;
+    margin: 0;
+    padding: 15px 0 15px 10px;
+}
+
+.cms-mp-radio {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.cms-profile-box {
+    border: 1px solid @cms-light-grey;
+    overflow: hidden;
+    padding: 20px;
+    .cms-standard-boxshadow;
+    margin-bottom: 1em;
+}
+
+.cms-profile-box-nb {
+    overflow: visible;
+    margin-bottom: 1em;
+}
+
+.cms-field-container {
+    .nopadding;
+}
+
+//MFA Titles
+
+.cms-h5 .cms-mfa-titles {
+    line-height: 30px;
+    margin-top: 30px;
+}
+
+.cms-remove-mfadev-description {
+    margin-bottom: 20px;
+}
+
+.cms-phone-fa-container {
+    float: left;
+    color: @cms-blue;
+    margin-bottom: .5em;
+}
+
+.cms-mfa-info-container>.rmfa {
+    font-size: 3em;
+    margin-right: 0;
+    width: 100%;
+}
+
+.cms-show-mfa>.form-group>h4 {
+    float: left;
+    margin-top: 1.5em;
+}
+
+td>.cms-phone-fa-container {
+    font-size: 35px;
+    width: 50px;
+    max-width: 1.25em;
+    text-align: center;
+    margin-right: 12px;
+    vertical-align: sub;
+    float: left;
+    margin-bottom: 0;
+    .cms-icon-shadow;
+}
+
+//Testing icons for Remove MFA
+.rmfa,
+.prof-ico {
+    font-size: 35px;
+    width: 50px;
+    max-width: 1.25em;
+    text-align: center;
+    margin-right: 5px;
+    vertical-align: sub;
+    float: left;
+    color: @cms-blue;
+    .cms-icon-shadow;
+}
+
+.cms-remove-mfa-conf-message {
+    .cms-alert-info;
+    .cms-alert;
+    clear: both;
+    display: block;
+    margin-bottom: 30px;
+    overflow: hidden;
+    .cms-standard-boxshadow;
+}
+
+.cms-modal-title-edit,
+.cms-modal-title-bell {
+    color: @cms-blue;
+    float: none;
+    font-size: 50px;
+    vertical-align: middle;
+    width: auto;
+    margin: 0 10px;
+    .cms-icon-shadow;
+}
+
+//MFA form groups
+
+
+div[id^="cms-modal-remove-mfa-"] .cms-modal-remove-mfa,
+div[id^="cms-modal-edit-mfa-"] .cms-modal-edit-mfa,
+div[id^="cms-modal-edit-mfa-"] .cms-edit-mfa-container,
+div[id^="cms-modal-activate-mfa-"] .cms-modal-activate-mfa,
+div[id^="cms-modal-activate-mfa-"] .cms-activate-mfa-container {
+    overflow: initial !important;
+}

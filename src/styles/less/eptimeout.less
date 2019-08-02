@@ -1,0 +1,163 @@
+@import "variables";
+
+.eptimeout.ui-dialog {
+    background-position: right top;
+    background-repeat: repeat-y;
+    .opacity (@opacity: .90);
+    overflow: hidden;
+    position: fixed;
+    width: 500px !important;
+
+    .ui-dialog-titlebar {}
+
+    .ui-dialog-title {
+        color: @cms-white;
+        line-height: 22px;
+        font-family: 'Merriweather Bold', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .ui-dialog-titlebar-close {
+        height: 20px;
+        margin: -10px 0 0 0;
+        padding: 1px;
+        position: absolute;
+        right: .3em;
+        top: 50%;
+        width: 20px;
+    }
+
+    .ui-dialog-content {
+        background: none;
+        border: 0;
+        position: relative;
+        padding: 30px;
+    }
+
+    .ui-dialog-buttonpane.ui-widget-content {
+        border-top: none;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .ui-dialog-buttonpane {
+        .ui-dialog-buttonset {
+            button {
+                cursor: pointer;
+                margin: .5em .4em .5em 0;
+            }
+        }
+    }
+}
+
+/* Corner radius */
+.eptimeout {
+    &.ui-widget-content {
+        background-color: @cms-white;
+        color: @cms-reg-grey;
+
+        & a {
+            color: @cms-reg-grey;
+        }
+    }
+
+    &.ui-widget {
+        font-family: @cms-font-sourcesanspro;
+        font-size: 1em;
+
+        & input,
+        & select,
+        & textarea,
+        & button {
+            background-color: @cms-login-button;
+            border: 0;
+            color: @cms-white;
+            font-family: @cms-font-sourcesanspro;
+            font-size: 1em;
+            font-weight: bold;
+            margin-right: 15px !important;
+            padding: 8px 20px;
+            text-align: center;
+            height: 50px;
+        }
+    }
+
+    &.ui-corner {
+
+        &-all,
+        &-top,
+        &-left,
+        &-tl {
+            border-top-left-radius: 4px;
+        }
+
+        & {
+
+            &-all,
+            &-top,
+            &-right,
+            &-tr {}
+        }
+
+        & {
+
+            &-all,
+            &-bottom,
+            &-left,
+            &-bl {}
+        }
+
+        & {
+
+            &-all,
+            &-bottom,
+            &-right,
+            &-br {}
+        }
+    }
+
+    &.ui-resizable {
+        position: relative;
+    }
+
+    &.ui-front {
+        z-index: @zindex-popover;
+    }
+
+    &.ui-widget-header {
+        background-color: @cms-yellow;
+        background: -webkit-linear-gradient(@cms-light-yellow, @cms-yellow);
+        background: linear-gradient(@cms-light-yellow, @cms-yellow);
+        font-weight: bold;
+
+        & a {
+            color: @cms-white;
+        }
+    }
+
+    &.ui-draggable {
+        & .ui-dialog-titlebar {
+            cursor: move;
+            text-align: center;
+            background-color: @cms-blue;
+            height: 50px;
+            padding: 15px;
+        }
+    }
+}
+
+.ui-front {
+    z-index: @zindex-popover;
+}
+
+.ui-widget-overlay.eptimeout {
+    background: @cms-black 50% 50% repeat !important;
+    filter: Alpha(Opacity=50);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    .opacity (@opacity: .8) !important;
+    .cms-expanded;
+}

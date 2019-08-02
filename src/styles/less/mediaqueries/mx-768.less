@@ -1,0 +1,98 @@
+//Any styles not addressed by bootstrap under 768px.
+
+@media screen and (max-width: 768px) { 
+  
+	.cms-header-out, 
+	.cms-header-in {
+		.nopadding-left;
+		.nopadding-right;
+		max-height: 60px;
+	}
+	.container.header-container {
+		padding-left: 5px;
+		padding-right: 5px;
+		background-color: @cms-blue;
+		width: 100% !important;
+	}
+	.nav.navbar-nav.navbar-right.cms-header-links-container {
+		padding-left: 15px;
+	}
+	.container > .navbar-collapse {
+		//.nomargin;
+		background: @cms-blue;
+		.box-shadow(@property: 5px 5px 20px @cms-dark-grey);
+	}
+	.cms-login-text .homePAGEtext {
+		font-size: 16px;
+		font-weight: 500;
+		margin-bottom: 40px;
+	}
+	.cms-header-links-container {
+		& > .cms-header-links-item > .cms-header-link {
+			font-size: 18px; 
+		}
+	}
+	.cms-rfnfp { 
+		.nopadding;
+		text-align: right;
+	}
+	.cms-rfnfp-links {
+		.nopadding-right;
+	}
+	.cms-account-wall a {
+		color: @cms-link-lightgreen;
+	}
+	.cms-sprite-eagle {
+		.auto-margin;
+	}
+	.cms-transform {
+		.cms-transform (@transform-property: scale(.8));
+		margin-left: -20px;
+	}
+	.cms-select-opt.show {
+		top: 0;
+	}
+	.cms-radio-item {
+		    margin: 0px 15px;
+	}
+	//Overriding WP navigation
+	.stNavTapArea.cms-megamenublock{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	#ViewAllApps_container {
+		//margin-top: 640px;
+		width: 96% !important;
+		margin-left: 5px;
+	}
+	.stOpenNavLevel.stSecondLevelNav.viewALL {
+	    position: absolute;
+	}
+	.stNavChildOpenIcon {
+
+	}
+	#allTiles > .stNavListItem {
+		overflow: hidden;
+	}
+	.cms-about {
+		& > .cms-aboutright {
+			padding: 20px 30px;
+			text-align: center;
+		}
+	}
+	.cms-menu-equalizer { 
+		width: 95%;
+	}
+	#cms-welcome-user-caret { 
+		right: 20px;
+	}
+
+    /* Step List */
+	.cms-step__title {
+      font-size: 21px;
+    }
+
+
+
+
+}

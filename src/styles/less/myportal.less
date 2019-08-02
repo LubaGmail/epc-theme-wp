@@ -1,0 +1,41 @@
+@import "variables";
+
+
+//Icons in tiles
+.fa.cms-tile-icon {
+    font-size: 3em;
+    display: block;
+}
+
+.cms-app-title-tile {
+    font-size: 1em;
+    margin-top: .5em;
+    display: block;
+    font-family: @cms-font-sourcesanspro;
+}
+
+//i on verticals' tiles
+.cms-moreInfoIcon {
+    color: @cms-i-tile;
+    margin-right: .5em;
+
+    &:hover,
+    &:focus {
+        .cms-transition(@transition-property: all;
+        @transition-duration: 200ms;
+        @transition-timing-function: ease-in);
+        transform: scale(1.20);
+        color: @cms-white;
+    }
+}
+
+//Open menus
+nav.cms-myapps-label-container {
+    background-color: @cms-dark-blue;
+    z-index: 1000;
+    padding: 10px;
+    .box-shadow(@property: 0 10px 20px @cms-dark-grey);
+    margin-bottom: 1em;
+    font-family: @cms-font-sourcesanspro;
+
+}

@@ -1,0 +1,204 @@
+@import "variables";
+
+
+//Defining fonts + FontAwesome
+
+@font-face {
+    font-family: 'Merriweather';
+    src: local('Merriweather'), url('@{cms-fonts-path}/merriweather-regular-webfont.eot') format('embedded-opentype');
+    src: local('Merriweather'), url('@{cms-fonts-path}/merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('@{cms-fonts-path}/merriweather-regular-webfont.woff') format('woff'),
+    url('@{cms-fonts-path}/merriweather-regular-webfont.ttf') format('truetype');
+    .font-weight-style;
+}
+
+@font-face {
+    font-family: 'Merriweather Bold';
+    src: local('Merriweather Bold'), url('@{cms-fonts-path}/merriweather-bold-webfont.eot') format('embedded-opentype');
+    src: local('Merriweather Bold'), url('@{cms-fonts-path}/merriweather-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('@{cms-fonts-path}/merriweather-bold-webfont.woff') format('woff'),
+    url('@{cms-fonts-path}/merriweather-bold-webfont.ttf') format('truetype');
+    .font-weight-style;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: local('Source Sans Pro'), url('@{cms-fonts-path}/sourcesanspro-regular-webfont.eot') format('embedded-opentype');
+    src: local('Source Sans Pro'), url('@{cms-fonts-path}/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('@{cms-fonts-path}/sourcesanspro-regular-webfont.woff') format('woff'),
+    url('@{cms-fonts-path}/sourcesanspro-regular-webfont.ttf') format('truetype');
+    .font-weight-style;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro Bold';
+    src: local('Source Sans Pro Bold'), url('@{cms-fonts-path}/sourcesanspro-bold-webfont.eot') format('embedded-opentype');
+    src: local('Source Sans Pro Bold'), url('@{cms-fonts-path}/sourcesanspro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('@{cms-fonts-path}/sourcesanspro-bold-webfont.woff') format('woff'),
+    url('@{cms-fonts-path}/sourcesanspro-bold-webfont.ttf') format('truetype');
+    .font-weight-style;
+}
+
+// @font-face {
+//   font-family: 'FontAwesome';
+//   src: url('@{fa-font-path}/@{fa-font-name}.eot');
+//   src: url('@{fa-font-path}/@{fa-font-name}.eot#iefix') format('embedded-opentype'),
+//     url('@{fa-font-path}/@{fa-font-name}.woff2') format('woff2'),
+//     url('@{fa-font-path}/@{fa-font-name}.woff') format('woff'),
+//     url('@{fa-font-path}/@{fa-font-name}.ttf') format('truetype'),
+//     url('@{fa-font-path}/@{fa-font-name}.svg#fontawesomeregular') format('svg');
+//   .font-weight-style;
+// }
+
+//Attributes are imported using arguments via mixins
+
+//Headers
+.cms-h1-login {
+    text-shadow: 1px 1px 1px fade(@cms-black, 56%);
+    .arguments-merriweather-bold (@font-size: 22px;
+    @line-height: 52px;
+    @font-weight: 700);
+}
+
+.cms-h1 {
+    text-shadow: 1px 1px 1px fade(@cms-black, 56%);
+    .arguments-merriweather-bold (@font-size: 40px;
+    @line-height: 52px;
+    @font-weight: 700);
+}
+
+.cms-h1-interior {
+    text-shadow: none;
+    .arguments-merriweather-bold (@font-size: 32px;
+    @line-height: 52px;
+    @color: @cms-title-blue);
+}
+
+.cms-h1-interior-alert {
+    .arguments-merriweather-bold (@font-size: 20px;
+    @line-height: 52px;
+    @color: @cms-black);
+}
+
+.cms-h2 {
+    .arguments-merriweather-bold (@color: @cms-header-lightblue;
+    @font-size: 30px;
+    @font-weight: 700);
+    text-align: center;
+    margin-bottom: 30px;
+    // background-color: transparent !important;
+}
+
+.cms-h3 {
+    letter-spacing: normal;
+    .arguments-merriweather-bold (@line-height: 26px;
+    @color: @cms-header-lightblue;
+    @font-size: 26px;
+    @font-weight: 700);
+}
+
+.cms-h3-login {
+    letter-spacing: normal;
+    .arguments-merriweather-bold (@line-height: 26px;
+    @color: @cms-white;
+    @font-size: 1.1em;
+    @font-weight: 700);
+}
+
+.cms-h4 {
+    .arguments-merriweather-bold (@color: @cms-h4;
+    @line-height: 22px;
+    @font-weight: 700);
+}
+
+.cms-h5 {
+    .arguments-merriweather-bold (@font-size: 20px;
+    @line-height: 1.5em;
+    @font-weight: 700;
+    @color: @cms-title-blue);
+}
+
+.cms-h6 {
+    text-transform: uppercase;
+    .arguments-sourcesanspro (@color: @cms-header-lightblue;
+    @font-size: 13px;
+    @line-height: 17px;
+    @font-weight: 400);
+}
+
+//Paragraphs & General Text
+.cms-general-base {
+    //font-family: @cms-font-sourcesanspro;
+    //font-size: 17px;
+}
+
+.cms-p-thp {
+    .arguments-merriweather;
+    font-size: 17px;
+}
+
+.cms-p-login {
+    .arguments-merriweather (@font-size: 17px);
+}
+
+.cms-p-chp {
+    text-align: center;
+    margin-bottom: 100px;
+    .arguments-merriweather (@color: @cms-p-chp);
+    font-size: 17px;
+}
+
+.cms-p-chp-l {
+    margin-bottom: 30px;
+    .arguments-sourcesanspro (@color: @cms-white;
+    @font-size: 17px;
+    @font-weight: 100);
+}
+
+.cms-p-reg {
+    .arguments-merriweather;
+    font-size: 17px;
+}
+
+.cms-p-mpp {
+    .arguments-merriweather (@color: @cms-p-mpp);
+    font-size: 17px;
+}
+
+.cms-registration-field {
+    .arguments-merriweather (@color: @cms-header-lightblue;
+    @font-size: 14px);
+}
+
+.cms-reg-p,
+.cms-p-reg-modal,
+.cms-pre-submit-info {
+    .arguments-sourcesanspro (@color: @cms-reg-grey;
+    @font-weight: 100);
+    font-size: 17px;
+}
+
+.cms-p-reg-inst {
+    .arguments-sourcesanspro (@color: @cms-reg-grey;
+    @font-weight: 600;
+    @font-size: 18px);
+    clear: both;
+}
+
+.cms-p-reg-register {
+    margin-left: 5px;
+    .arguments-sourcesanspro (@color: @cms-reg-grey;
+    @font-weight: 100);
+    font-size: 17px;
+}
+
+.cms-scroll-box>h3,
+.cms-scroll-box>h4 {
+    color: @cms-field-text-color;
+}
+
+//Links
+.cms-liks {
+    color: @cms-field-color;
+    text-decoration: none;
+}

@@ -1,0 +1,98 @@
+//Any styles not addressed by bootstrap that need to be hidden above 769px.
+
+@media screen and (min-width: 769px) {
+
+  // Step List
+  .cms-step:before {
+    font-size: 20px;
+    height: 32px;
+    left: -42px;
+    line-height: 28px;
+    padding-left: 1px;
+    top: 3px;
+    width: 32px;
+  }
+  .cms-step {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .cms-step--completed:before,
+  .cms-step--current:before {
+    line-height: 32px;
+  }
+  .cms-step__content {
+    padding-right: 16px;
+  }
+  
+  .cms-step__content--with-content + .cms-step__actions {
+    margin-top: 0;
+  }
+  .cms-step__actions {
+    font-size: 16px;
+    text-align: right;
+  }
+  .cms-step__completed-text {
+    display: block;
+    margin-right: 0;
+    padding-top: 6px;
+    white-space: nowrap;
+  }
+  .cms-step__description {
+    font-size: 16px;
+  }
+  .cms-substep__edit {
+        position:absolute;
+        right: 0
+  }
+  //end Step List
+
+  .cms-login-container > .cms-login-text {
+    text-align: left;
+    padding: 0 30px 30px 0;
+  }
+  .cms-rfnfp {
+    list-style-type: disc;
+    text-align: left;
+  }
+  .navbar-nav > li > .cms-header-link {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 15px;
+    height: 49px;
+  }
+  //Fix for NUR
+  .container.cms-fields-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .navbar .cms-logo-out {
+    margin-top: 10px;
+  }
+  .cms-all-apps {
+    padding: 25px 0 18px 0;
+    font-size: 16px;
+    background-color: fade(@cms-dark-blue, 55%);
+    text-align: center;
+    &:hover {
+      background-color: @cms-dark-blue;
+    }
+  }
+  .cms-allapps-menu > .fa {
+    font-size: 20px;
+    vertical-align: sub;
+    margin-right: 5px;
+  }
+  //Cutting welcome user when name is too long
+  #cms-welcome-user {
+    max-width: 225px;
+  }
+  .cms-menu-equalizer { 
+    width: 75%;
+  } 
+  
+}
